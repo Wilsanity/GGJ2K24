@@ -9,6 +9,7 @@ public class Gameplay : MonoBehaviour
     [SerializeField] private GameObject fillMenu;
 
     [SerializeField] private Health healthbar;
+    [SerializeField] private JokeOMeter laugh;
 
 
 
@@ -37,6 +38,7 @@ public class Gameplay : MonoBehaviour
     public void Good()
     {
         winCount++;
+        laugh.AddLaugh(25);
         NextGame();
     }
     public void Bad()
@@ -55,6 +57,7 @@ public class Gameplay : MonoBehaviour
     public void Meh()
     {
         healthbar.TakeDamage(10);
+        laugh.AddLaugh(10);
         NextGame();
     }
 
