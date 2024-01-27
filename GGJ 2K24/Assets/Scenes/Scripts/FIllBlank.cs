@@ -63,7 +63,8 @@ public class FIllBlank : MonoBehaviour
 
     public void ChosenJoke(int choice)
     {
-        
+        Debug.Log(choice);
+        Debug.Log(currentWeight[choice]);
         if (currentWeight[choice] == 2)
         {
             gameplay.Good();

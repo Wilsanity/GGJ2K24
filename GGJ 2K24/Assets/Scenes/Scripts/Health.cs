@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] public int health;
-    [SerializeField] int maxHealth;
+    [SerializeField] public float health;
+    [SerializeField] float maxHealth;
+
+    [SerializeField] private Image healthbar;
+
+
 
     private void Start()
     {
@@ -18,18 +23,23 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (health >= maxHealth)
+        /*if (health >= maxHealth)
         {
             health = maxHealth;
         }
         else
         {
             health -= damage;
-        }
+        }*/
+
+        health -= damage;
+
+        Debug.Log("take damage");
+        UpdateHealth();
     }
 
 
-    void AddHealth(int healthBonus)
+    public void AddHealth(int healthBonus)
     {
         if (health >= maxHealth)
         {
@@ -39,6 +49,18 @@ public class Health : MonoBehaviour
         {
             health += healthBonus;
         }
+
+        UpdateHealth();
+    }
+
+    private void UpdateHealth()
+    {
+        Debug.Log("hurt");
+        Debug.Log(health);
+        
+        healthbar.fillAmount = health/100;
+
+        Debug.Log(healthbar.fillAmount);
     }
 
     public void Die()

@@ -37,6 +37,10 @@ public class ChooseGame : MonoBehaviour
 
         }
         
+        for(int i = 0; i <= 3; i++)
+        {
+            outputJokes[i].text = chosenJokes[i];
+        }
 
         
     }

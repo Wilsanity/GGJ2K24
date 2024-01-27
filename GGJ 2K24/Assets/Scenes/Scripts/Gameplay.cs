@@ -8,15 +8,23 @@ public class Gameplay : MonoBehaviour
     
     [SerializeField] private GameObject fillMenu;
 
+    [SerializeField] private Health healthbar;
 
 
 
+    private int losingStreak = 0;
+    [SerializeField] int damage = 25;
 
+    private int loseCount;
+    private int winCount;
 
 
     void Start()
     {
-        
+        healthbar = GetComponent<Health>();
+        chooseMenu.SetActive(true);
+        fillMenu.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -28,15 +36,39 @@ public class Gameplay : MonoBehaviour
 
     public void Good()
     {
-        Debug.Log("you did good");
+        winCount++;
+        NextGame();
     }
     public void Bad()
     {
-        Debug.Log("you did bad");
+        loseCount++;
+        losingStreak++;
+        if(losingStreak == 2)
+        {
+            
+            losingStreak = 0;
+        }
+        healthbar.TakeDamage(damage);
+        NextGame();
     }
 
     public void Meh()
     {
+        healthbar.TakeDamage(10);
+        NextGame();
+    }
 
+    private void NextGame()
+    {
+        if(chooseMenu.activeInHierarchy == true)
+        {
+            chooseMenu.SetActive(false);
+            fillMenu.SetActive(true);
+        }
+        else
+        {
+            chooseMenu.SetActive(true);
+            fillMenu.SetActive(false);
+        }
     }
 }
