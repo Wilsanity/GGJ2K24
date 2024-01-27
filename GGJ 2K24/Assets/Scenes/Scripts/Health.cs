@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] int health;
+    [SerializeField] public int health;
     [SerializeField] int maxHealth;
 
     private void Start()
@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if(health >= maxHealth)
+        if (health >= maxHealth)
         {
             health = maxHealth;
         }
@@ -28,6 +28,18 @@ public class Health : MonoBehaviour
         }
     }
 
+
+    void AddHealth(int healthBonus)
+    {
+        if (health >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += healthBonus;
+        }
+    }
 
     public void Die()
     {
