@@ -1515,22 +1515,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718311d45682dc0469b964af37716d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameplay: {fileID: 0}
-  jokes1: 
-  jokes2: 
-  jokes3: 
-  response1: []
-  response2: []
-  response3: []
-  weight1: 
-  weight2: 
-  weight3: 
-  jokeBlank: {fileID: 0}
+  gameplay: {fileID: 754756304}
+  jokes1: heehee
+  jokes2: hoohoo
+  jokes3: haahaa
+  response1:
+  - yes
+  - no
+  - maybe
+  - bitch
+  response2:
+  - fuck
+  - shit
+  - 'bitch '
+  - bean
+  response3:
+  - why
+  - please
+  - help
+  - no
+  weight1: 01000000000000000200000000000000
+  weight2: 00000000010000000200000000000000
+  weight3: 02000000000000000100000000000000
+  jokeBlank: {fileID: 1845476004}
   responses:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1912370591}
+  - {fileID: 373863241}
+  - {fileID: 871543095}
+  - {fileID: 1965897298}
 --- !u!1 &1349946041
 GameObject:
   m_ObjectHideFlags: 0

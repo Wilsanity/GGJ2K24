@@ -9,9 +9,9 @@ public class FIllBlank : MonoBehaviour
     [SerializeField] private string jokes1;
     [SerializeField] private string jokes2;
     [SerializeField] private string jokes3;
-    [SerializeField] private string[] response1;
-    [SerializeField] private string[] response2;
-    [SerializeField] private string[] response3;
+    [SerializeField] private string[] response1 = new string[4];
+    [SerializeField] private string[] response2 = new string[4];
+    [SerializeField] private string[] response3 = new string[4];
     [SerializeField] private int[] weight1;
     [SerializeField] private int[] weight2;
     [SerializeField] private int[] weight3;
