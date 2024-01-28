@@ -25,8 +25,12 @@ public class Gameplay : MonoBehaviour
     void Start()
     {
         healthbar = GetComponent<Health>();
+        
         chooseMenu.SetActive(true);
         fillMenu.SetActive(false);
+
+        dialogue1.SetActive(false);
+        dialogue2.SetActive(false);
 
     }
 
@@ -42,7 +46,7 @@ public class Gameplay : MonoBehaviour
         winCount++;
         laugh.AddLaugh(25);
 
-        dialogue1.SetActive(true);
+        StartWinDialogue();
 
         NextGame();
     }
@@ -55,8 +59,8 @@ public class Gameplay : MonoBehaviour
             
             losingStreak = 0;
         }
-        
-        dialogue2.SetActive(true); 
+
+        StartLoseDialogue();
 
         healthbar.TakeDamage(damage);
         NextGame();
@@ -76,14 +80,24 @@ public class Gameplay : MonoBehaviour
             chooseMenu.SetActive(false);
             fillMenu.SetActive(true);
 
-            dialogue1.SetActive(true);
+          
           
         }
         else
         {
             chooseMenu.SetActive(true);
             fillMenu.SetActive(false);
-            dialogue2.SetActive(true);
+         
         }
+    }
+
+    private void StartWinDialogue()
+    {
+        dialogue1.SetActive(true);
+    }
+
+    private void StartLoseDialogue()
+    {
+        dialogue2.SetActive(true);
     }
 }

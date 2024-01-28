@@ -6,9 +6,17 @@ using TMPro;
 public class FIllBlank : MonoBehaviour
 {
     [SerializeField] private Gameplay gameplay;
+
+
+    [TextArea(2, 2)]
     [SerializeField] private string jokes1;
+
+    [TextArea(2, 2)]
     [SerializeField] private string jokes2;
+
+    [TextArea(2, 2)]
     [SerializeField] private string jokes3;
+
     [SerializeField] private string[] response1 = new string[4];
     [SerializeField] private string[] response2 = new string[4];
     [SerializeField] private string[] response3 = new string[4];

@@ -6,6 +6,8 @@ using TMPro;
 public class ChooseGame : MonoBehaviour
 {
     [SerializeField] private Gameplay gameplay;
+
+    [TextArea(2, 2)]
     [SerializeField] private List<string> jokes;
     [SerializeField] private List<int> weights;
     [SerializeField] private string[] chosenJokes = new string[4];

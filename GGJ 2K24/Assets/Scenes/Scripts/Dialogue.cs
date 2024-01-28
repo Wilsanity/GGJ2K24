@@ -16,9 +16,11 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
-       
-        StartDialogue();
+        
+       StartDialogue();
     }
+
+    
 
     private void Update()
     {
@@ -34,11 +36,14 @@ public class Dialogue : MonoBehaviour
                 textComponent.text = lines[index];
             }
         }
+
+    
     }
 
     public void StartDialogue()
     {
         textComponent.text = string.Empty; //Clear Dialogue 
+        gameObject.SetActive(true);
         index = 0;
         StartCoroutine(TypeLine());
     }
