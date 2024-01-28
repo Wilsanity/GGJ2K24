@@ -6,6 +6,8 @@ using TMPro;
 public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
+
+    [TextArea(5, 5)]
     public string[] lines;
 
     public float textSpeed;
@@ -14,7 +16,7 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
-        textComponent.text = string.Empty; //Clear Dialogue 
+       
         StartDialogue();
     }
 
@@ -34,8 +36,9 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
+        textComponent.text = string.Empty; //Clear Dialogue 
         index = 0;
         StartCoroutine(TypeLine());
     }

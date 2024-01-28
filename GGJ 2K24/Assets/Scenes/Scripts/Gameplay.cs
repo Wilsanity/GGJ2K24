@@ -11,6 +11,8 @@ public class Gameplay : MonoBehaviour
     [SerializeField] private Health healthbar;
     [SerializeField] private JokeOMeter laugh;
 
+    [SerializeField] private GameObject dialogue1;
+    [SerializeField] private GameObject dialogue2;
 
 
     private int losingStreak = 0;
@@ -39,6 +41,9 @@ public class Gameplay : MonoBehaviour
     {
         winCount++;
         laugh.AddLaugh(25);
+
+        dialogue1.SetActive(true);
+
         NextGame();
     }
     public void Bad()
@@ -50,6 +55,9 @@ public class Gameplay : MonoBehaviour
             
             losingStreak = 0;
         }
+        
+        dialogue2.SetActive(true); 
+
         healthbar.TakeDamage(damage);
         NextGame();
     }
@@ -67,11 +75,15 @@ public class Gameplay : MonoBehaviour
         {
             chooseMenu.SetActive(false);
             fillMenu.SetActive(true);
+
+            dialogue1.SetActive(true);
+          
         }
         else
         {
             chooseMenu.SetActive(true);
             fillMenu.SetActive(false);
+            dialogue2.SetActive(true);
         }
     }
 }
