@@ -917,7 +917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -710.0968, y: 373.53577}
+  m_AnchoredPosition: {x: -710.0968, y: 342}
   m_SizeDelta: {x: -1420.1736, y: -764.1887}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495912831
@@ -994,7 +994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -33.433838, y: 83.00006}
+  m_AnchoredPosition: {x: -33.433838, y: 68}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705507993
@@ -1318,8 +1318,8 @@ MonoBehaviour:
   fillMenu: {fileID: 1260576056}
   healthbar: {fileID: 754756306}
   laugh: {fileID: 754756307}
-  dialogue1: {fileID: 0}
-  dialogue2: {fileID: 0}
+  dialogue1: {fileID: 492829810}
+  dialogue2: {fileID: 95439744}
   damage: 25
 --- !u!4 &754756305
 Transform:
@@ -1351,6 +1351,7 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   healthbar: {fileID: 350631672}
+  gameplay: {fileID: 754756304}
 --- !u!114 &754756307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,6 +1367,7 @@ MonoBehaviour:
   laugh: 0
   minLaugh: 0
   laughBar: {fileID: 225025593}
+  gameplay: {fileID: 754756304}
 --- !u!1 &871543092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3823,7 +3825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -88.43201, y: 20}
+  m_AnchoredPosition: {x: -88.43201, y: -0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020038011

@@ -10,6 +10,7 @@ public class JokeOMeter : MonoBehaviour
     [SerializeField] float minLaugh = 0;
 
     [SerializeField] private Image laughBar;
+    [SerializeField] private Gameplay gameplay;
 
 
 
@@ -25,6 +26,11 @@ public class JokeOMeter : MonoBehaviour
         laugh += laughBonus;
 
         UpdateLaugh();
+
+        if(laugh >= 100)
+        {
+            gameplay.WinGame();
+        }
     }
 
     private void UpdateLaugh()

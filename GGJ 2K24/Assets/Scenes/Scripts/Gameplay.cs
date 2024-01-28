@@ -100,4 +100,14 @@ public class Gameplay : MonoBehaviour
     {
         dialogue2.SetActive(true);
     }
+
+    public void LoseGame()
+    {
+
+    }
+    public void WinGame()
+    {
+
+    }
+
 }
