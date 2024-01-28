@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     [SerializeField] float maxHealth;
 
     [SerializeField] private Image healthbar;
-
+    [SerializeField] private Gameplay gameplay;
 
 
     private void Start()
@@ -23,18 +23,17 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        /*if (health >= maxHealth)
-        {
-            health = maxHealth;
-        }
-        else
-        {
-            health -= damage;
-        }*/
+        
 
         health -= damage;
 
         Debug.Log("take damage");
+
+        if(health <= 0)
+        {
+            gameplay.LoseGame();
+        }
+
         UpdateHealth();
     }
 
