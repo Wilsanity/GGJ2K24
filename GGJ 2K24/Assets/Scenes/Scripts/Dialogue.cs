@@ -14,6 +14,12 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
+    [SerializeField] private GameObject chooseMenu;
+
+    [SerializeField] private GameObject fillMenu;
+
+
+
     private void Start()
     {
         FindObjectOfType<SoundManager>().Play("TalkingToTheKing");
@@ -72,6 +78,10 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+
+            chooseMenu.SetActive(true);
+            fillMenu.SetActive(true);
+
         }
     }
 }

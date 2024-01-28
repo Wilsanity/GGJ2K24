@@ -44,6 +44,7 @@ public class ChooseGame : MonoBehaviour
             outputJokes[i].text = chosenJokes[i];
         }
 
+      
         
     }
 

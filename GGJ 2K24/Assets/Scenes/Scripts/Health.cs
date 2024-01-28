@@ -20,6 +20,13 @@ public class Health : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (health <= 0)
+        {
+            gameplay.LoseGame();
+        }
+    }
 
     public void TakeDamage(int damage)
     {
@@ -62,14 +69,6 @@ public class Health : MonoBehaviour
         Debug.Log(healthbar.fillAmount);
     }
 
-    public void Die()
-    {
-        if (health <= 0)
-        {
-            health = 0;
-            //SceneManager.LoadScene("MainMenu");
-        }
-    }
-
+   
 }
 

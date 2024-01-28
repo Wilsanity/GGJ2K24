@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gameplay : MonoBehaviour
 {
@@ -8,14 +10,20 @@ public class Gameplay : MonoBehaviour
     
     [SerializeField] private GameObject fillMenu;
 
-    [SerializeField] private ItemBoost itemBoost;
+    [SerializeField] private GameObject happyKing; 
+    
 
     [SerializeField] private Health healthbar;
     [SerializeField] private JokeOMeter laugh;
 
-    [SerializeField] private GameObject dialogue1;
-    [SerializeField] private GameObject dialogue2;
+  
 
+
+    private ItemBoost itemBoost;
+
+    [SerializeField] private Animator animator;
+
+  
 
     private int losingStreak = 0;
     [SerializeField] int damage = 25;
@@ -29,11 +37,12 @@ public class Gameplay : MonoBehaviour
         healthbar = GetComponent<Health>();
         itemBoost = GetComponent<ItemBoost>();
         
-        chooseMenu.SetActive(true);
+        chooseMenu.SetActive(false);
         fillMenu.SetActive(false);
+   
 
-        dialogue1.SetActive(false);
-        dialogue2.SetActive(false);
+    
+        happyKing.SetActive(false);
 
     }
 
@@ -49,7 +58,6 @@ public class Gameplay : MonoBehaviour
         winCount++;
         laugh.AddLaugh(25);
 
-        StartWinDialogue();
 
         NextGame();
     }
@@ -63,7 +71,7 @@ public class Gameplay : MonoBehaviour
             losingStreak = 0;
         }
 
-        StartLoseDialogue();
+     
 
         healthbar.TakeDamage(damage);
         NextGame(); 
@@ -95,23 +103,38 @@ public class Gameplay : MonoBehaviour
         }
     }
 
-    private void StartWinDialogue()
-    {
-        dialogue1.SetActive(true);
-    }
-
-    private void StartLoseDialogue()
-    {
-        dialogue2.SetActive(true);
-    }
-
+ 
     public void LoseGame()
     {
+        StartCoroutine(playLoseScene());
 
     }
     public void WinGame()
     {
-
+        StartCoroutine(playWinScene());
     }
 
+    IEnumerator playLoseScene()
+    {
+        StartAnimation();
+
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("GameOver");
+    }
+
+
+    IEnumerator playWinScene()
+    {
+        happyKing.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        SceneManager.LoadScene("GameWin");
+    }
+
+    public void StartAnimation()
+    {
+        animator.SetBool("Lose", true);
+    }
 }
