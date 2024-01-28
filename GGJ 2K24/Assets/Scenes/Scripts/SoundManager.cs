@@ -8,8 +8,24 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    public static SoundManager instance; 
+
     private void Awake()
     {
+
+        if(instance == null)
+        {
+            instance = this;
+
+        }
+        else
+        {
+            Destroy(gameObject);
+           
+        }
+
+      
+
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -23,7 +39,8 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        
+        Play("JesterIntro");
+       
     }
 
     public void Play( string name)
@@ -38,5 +55,5 @@ public class SoundManager : MonoBehaviour
 
     }
 
-    //FindObjectOfType<AudioManager>().Play("");
+   
 }

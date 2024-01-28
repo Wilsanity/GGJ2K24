@@ -8,6 +8,8 @@ public class Gameplay : MonoBehaviour
     
     [SerializeField] private GameObject fillMenu;
 
+    [SerializeField] private ItemBoost itemBoost;
+
     [SerializeField] private Health healthbar;
     [SerializeField] private JokeOMeter laugh;
 
@@ -25,6 +27,7 @@ public class Gameplay : MonoBehaviour
     void Start()
     {
         healthbar = GetComponent<Health>();
+        itemBoost = GetComponent<ItemBoost>();
         
         chooseMenu.SetActive(true);
         fillMenu.SetActive(false);
@@ -56,19 +59,20 @@ public class Gameplay : MonoBehaviour
         losingStreak++;
         if(losingStreak == 2)
         {
-            
+            itemBoost.EnableRandomButton();
             losingStreak = 0;
         }
 
         StartLoseDialogue();
 
         healthbar.TakeDamage(damage);
-        NextGame();
+        NextGame(); 
     }
 
     public void Meh()
     {
         healthbar.TakeDamage(10);
+       
         laugh.AddLaugh(10);
         NextGame();
     }

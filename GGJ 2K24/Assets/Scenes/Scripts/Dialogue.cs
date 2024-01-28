@@ -16,8 +16,8 @@ public class Dialogue : MonoBehaviour
 
     private void Start()
     {
-        
-       StartDialogue();
+        FindObjectOfType<SoundManager>().Play("TalkingToTheKing");
+        StartDialogue();
     }
 
     

@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+
+    private void Start()
+    {
+        FindObjectOfType<SoundManager>().Play("JesterIntro");
+    }
     public void PlayButton()
     {
         SceneManager.LoadScene("MainScene");
